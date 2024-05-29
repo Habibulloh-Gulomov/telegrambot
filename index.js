@@ -13,15 +13,15 @@ let audio;
 let urlmsg;
 let msg;
 
-fs.readdir(dir, (err, files) => {
-	// console.log(files.length);
-	state = files.length;
-});
+// fs.readdir(dir, (err, files) => {
+// 	// console.log(files.length);
+// 	state = files.length;
+// });
 
-fs.readdir(aud, (err, files) => {
-	// console.log(files.length);
-	audio = files.length;
-});
+// fs.readdir(aud, (err, files) => {
+// 	// console.log(files.length);
+// 	audio = files.length;
+// });
 bot.setMyCommands([
 	{
 		command: "/start",
