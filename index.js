@@ -14,12 +14,12 @@ let urlmsg;
 let msg;
 
 fs.readdir(dir, (err, files) => {
-	console.log(files.length);
+	// console.log(files.length);
 	state = files.length;
 });
 
 fs.readdir(aud, (err, files) => {
-	console.log(files.length);
+	// console.log(files.length);
 	audio = files.length;
 });
 bot.setMyCommands([
