@@ -5,12 +5,6 @@ const bot = new TelegramBot(token, { polling: true });
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const { send } = require("process");
-
-const dir = "./savedvideo";
-const aud = "./audio";
-let state;
-let audio;
-let urlmsg;
 let msg;
 
 // fs.readdir(dir, (err, files) => {
