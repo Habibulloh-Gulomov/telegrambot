@@ -6,16 +6,11 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const { send } = require("process");
 let msg;
+let urlmsg;
+let state;
+let audio;
 
-// fs.readdir(dir, (err, files) => {
-// 	// console.log(files.length);
-// 	state = files.length;
-// });
 
-// fs.readdir(aud, (err, files) => {
-// 	// console.log(files.length);
-// 	audio = files.length;
-// });
 bot.setMyCommands([
 	{
 		command: "/start",
