@@ -72,33 +72,33 @@ const dataformat = {
 	}
 });
 
-bot.on("callback_query", (xabar) => {
-		async function botsendVideo() {
-			const chatId = xabar.from.id;
-			let id = await bot.sendMessage(chatId, "link keldi, biroz kuting!");
-			console.log(id);
-			let info = await ytdl.getInfo(msg.text);
-			let name = info.videoDetails.title;
-			console.log(xabar.data);
-			if (xabar.data == "/video") {
-				state = state + 1;
-				ytdl(urlmsg).pipe(fs.createWriteStream(`savedvideo/${state}.mp4`));
-				setTimeout(() => {
-					bot.deleteMessage(chatId, id.message_id);
-					bot.sendVideo(chatId, `savedvideo/${state}.mp4`, {
-						caption: `${name} \n\n A'zo bo'ling 👉 @IT_Moment`,
-					}); 
-				}, 15000);
-			} else if (xabar.data == "/audio") {
-				audio = audio + 1; 
-				ytdl(urlmsg).pipe(fs.createWriteStream(`./audio/${name}.mp3`));
-				setTimeout(() => { 
-					bot.deleteMessage(chatId, id.message_id);
-					bot.sendAudio(chatId, `./audio/${name}.mp3`, {
-						caption: `${name} \n\n A'zo bo'ling 👉 @IT_Moment`,
-					});
-				}, 15000);
-			}
-		} 
-		botsendVideo();
-	});
+// bot.on("callback_query", (xabar) => {
+// 		async function botsendVideo() {
+// 			const chatId = xabar.from.id;
+// 			let id = await bot.sendMessage(chatId, "link keldi, biroz kuting!");
+// 			console.log(id);
+// 			let info = await ytdl.getInfo(msg.text);
+// 			let name = info.videoDetails.title;
+// 			console.log(xabar.data);
+// 			if (xabar.data == "/video") {
+// 				state = state + 1;
+// 				ytdl(urlmsg).pipe(fs.createWriteStream(`savedvideo/${state}.mp4`));
+// 				setTimeout(() => {
+// 					bot.deleteMessage(chatId, id.message_id);
+// 					bot.sendVideo(chatId, `savedvideo/${state}.mp4`, {
+// 						caption: `${name} \n\n A'zo bo'ling 👉 @IT_Moment`,
+// 					}); 
+// 				}, 15000);
+// 			} else if (xabar.data == "/audio") {
+// 				audio = audio + 1; 
+// 				ytdl(urlmsg).pipe(fs.createWriteStream(`./audio/${name}.mp3`));
+// 				setTimeout(() => { 
+// 					bot.deleteMessage(chatId, id.message_id);
+// 					bot.sendAudio(chatId, `./audio/${name}.mp3`, {
+// 						caption: `${name} \n\n A'zo bo'ling 👉 @IT_Moment`,
+// 					});
+// 				}, 15000);
+// 			}
+// 		} 
+// 		botsendVideo();
+// 	});
